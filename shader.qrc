@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shader/cube.fs.glsl</file>
+        <file>shader/cube.vs.glsl</file>
+        <file>shader/skybox.vs.glsl</file>
+        <file>shader/skybox.fs.glsl</file>
+        <file>shader/planet.vs.glsl</file>
+        <file>shader/planet.fs.glsl</file>
+        <file>shader/path.vs.glsl</file>
+        <file>shader/path.fs.glsl</file>
+        <file>shader/sun.fs.glsl</file>
+    </qresource>
+    <qresource prefix="/res">
+        <file>images/stars.bmp</file>
+        <file>images/earth.bmp</file>
+        <file>images/clouds.bmp</file>
+        <file>images/jupiter.bmp</file>
+        <file>images/mars.bmp</file>
+        <file>images/mercury.bmp</file>
+        <file>images/moon.bmp</file>
+        <file>images/neptune.bmp</file>
+        <file>images/pluto.bmp</file>
+        <file>images/ring.bmp</file>
+        <file>images/saturn.bmp</file>
+        <file>images/sun.bmp</file>
+        <file>images/sun2.bmp</file>
+        <file>images/uranus.bmp</file>
+        <file>images/venus.bmp</file>
+    </qresource>
+</RCC>
