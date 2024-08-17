@@ -21,7 +21,6 @@ CoordinateSystem::CoordinateSystem(std::string name) :
 
 void CoordinateSystem::draw(glm::mat4 projection_matrix) const
 {
-    /// TODO: your code here
     if (_program == 0) {
         std::cerr << "Planet" << _name << "not initialized. Call init() first." << std::endl;
         return;
@@ -35,13 +34,10 @@ void CoordinateSystem::draw(glm::mat4 projection_matrix) const
     // set parameter
     glUniformMatrix4fv(glGetUniformLocation(_program, "projection_matrix"), 1, GL_FALSE, glm::value_ptr(projection_matrix));
     glUniformMatrix4fv(glGetUniformLocation(_program, "modelview_matrix"), 1, GL_FALSE, glm::value_ptr(_modelViewMatrix));
-    //glUniform1i(glGetUniformLocation(_program, "cubeTex"), 0);
-    //glUniform1i(glGetUniformLocation(_program, "texEnvMode"), texEnvMode);
     
     glDrawElements(GL_LINE_STRIP, 6, GL_UNSIGNED_INT, 0);
 
     glBindVertexArray(0);
-    //glGetError();
     VERIFY(CG::checkError());
 }
 
@@ -86,13 +82,10 @@ void CoordinateSystem::createObject()
     //xachse
     indices.push_back(0);
     indices.push_back(1);
-
     // yAchse
     indices.push_back(0);
     indices.push_back(2);
-
     //zAchse
-
     indices.push_back(0);
     indices.push_back(3);
 
@@ -123,8 +116,4 @@ void CoordinateSystem::createObject()
 
     // check for errors
     VERIFY(CG::checkError());
-
-
-
-
 }
