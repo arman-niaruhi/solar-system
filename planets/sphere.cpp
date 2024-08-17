@@ -28,14 +28,8 @@ sphere::sphere(float radius):
               // mathematical intepretation of sphere formula:
               // sin(phis) X sin(thetas) , cos(thetas) , cos(phis) X sin(thetas)
               positions.push_back(_radius * glm::vec3(sin(phis) * sin(thetas), cos(thetas), cos(phis) * sin(thetas)));         //save all vertecies in position vector
-
-
               norms.push_back(_radius * glm::vec3(sin(phis) * sin(thetas), cos(thetas), cos(phis) * sin(thetas)));             //save all norms in norm vector
-
-
               texcoords.push_back(glm::vec2((1.0f * h) / Config::u, (1.0f * v) / Config::v));                           //save all Coordinates in a vector to reuse it for texture mapping
-
-
 
               if (((v + 1) <= Config::v) &  (h != Config::u)) {
                       // generate index vector of sphere triangles
@@ -53,13 +47,11 @@ sphere::sphere(float radius):
                       indices.push_back(v * totaL_number_of_row_sections + h);                             //we save the indices for example in this order: 0 -> 1 -> totaL_number_of_row_sections + 1 ( go to upper line )
                       indices.push_back(v * totaL_number_of_row_sections + (h + 1));
                       indices.push_back((v + 1) * totaL_number_of_row_sections + (h + 1));
-
                       // k1+1 -> k2 -> k2+2
                       indices.push_back((v + 1) * totaL_number_of_row_sections + (h + 1));                 //we save the indices for example in this order: totaL_number_of_row_sections -> totaL_number_of_row_sections - 1 -> 0 )
                       indices.push_back((v + 1) * totaL_number_of_row_sections + h);
                       indices.push_back(v * totaL_number_of_row_sections + h);
-                  }
-      }
+                  }}
           }
 }
     std::vector<unsigned int> sphere ::getIndices(){
