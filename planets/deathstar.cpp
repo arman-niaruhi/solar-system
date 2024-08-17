@@ -61,24 +61,17 @@ void DeathStar::update(float elapsedTimeMs, glm::mat4 modelViewMatrix)
 
     // rotate around y-axis for global rotation angle
     modelview_stack.top() = glm::rotate(modelview_stack.top(), glm::radians(_globalRotation), glm::vec3(0.0f, 1.0f, 0.0f));
-
     modelview_stack.top() = glm::translate(modelview_stack.top(), glm::vec3(_distance, 0.0f, 0.0f));
-
     modelview_stack.top() = glm::rotate(modelview_stack.top(), glm::radians(-_globalRotation), glm::vec3(0.0f, 1.0f, 0.0f));
-
     modelview_stack.push(glm::rotate(modelview_stack.top(), glm::radians(_localRotation), glm::vec3(0.0f, 1.0f, 0.0f)));
 
     //scale to planet size
     modelview_stack.push(glm::scale(modelview_stack.top(), glm::vec3(_radius)));
-
     _modelViewMatrix = glm::mat4(modelview_stack.top());
-
     modelview_stack.pop();
-
     //update cone
     if( Config::laserActive)
         _cone->update(elapsedTimeMs, modelview_stack.top());
-
     modelview_stack.pop();
 }
 
@@ -91,8 +84,5 @@ void DeathStar::draw(glm::mat4 projection_matrix) const
 
 std::shared_ptr<Cone> DeathStar::cone() const
 {
-    /// TODO: your code here
     return _cone;
 }
-
-
